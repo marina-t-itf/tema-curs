@@ -1,3 +1,16 @@
 h1 {
     color:blue;
 }
+.column {
+    float: left;
+    width: 15.00%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  
