@@ -13,4 +13,7 @@ a {
 .flex-box:hover{
   background-color: gray;
 }
-  
+a:hover{
+            
+  color: black;
+ }
