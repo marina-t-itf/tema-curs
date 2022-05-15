@@ -5,53 +5,65 @@
         <script defer src="main.js"></script>
         <title>Hello World!</title>
         <style>
-            ul.demo {
-              list-style-type: none;
-              margin: 0;
-              padding: 0;
-            }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            
+         }
+
+        .flex-container > div {
+            width: 400px;
+            height: 300px;
+            display: flex;
+            background-color: #75d389;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 300px;
+            justify-content: center;
+            align-items: center;
+            
+        }
+       
+        
             </style>
     </head>
     <body>
         <h1>Hello World!</h1>
         <p></p>
-        <div class="row">
-            <div class="column"></div>
-            <div class="column"></div>
-            <div class="column"></div>
-          </div>
         
-        <h2></h2>
-
-        <div class="row">
-        <div class="column" >
-            <ul class="demo">
-            <li><a href="tema_1.html">Tema 1</a></li> 
-            <li><a href="tema_4.html">Tema 4</a></li>
-            <li><a href="tema_7.html">Tema 7</a></li>
-            <li><a href="tema_10.html">Tema 10</a></li>
-            <li><a href="tema_13.html">Tema 13</a></li>
-            </ul>
-        </div>
-        <div class="column" >
-            <ul class="demo">
-                <li><a href="tema_2.html">Tema 2</a></li>
-                <li><a href="tema_5.html">Tema 5</a></li>
-                <li><a href="tema_8.html">Tema 8</a></li>
-                <li><a href="tema_11.html">Tema 11</a></li>
-                <li><a href="tema_14.html">Tema 14</a></li>
-            </ul>
-        </div>
-        <div class="column" >
-            <ul class="demo">
-                <li><a href="tema_3.html">Tema 3</a></li> 
-                <li><a href="tema_6.html">Tema 6</a></li>
-                <li><a href="tema_9.html">Tema 9</a></li>
-                <li><a href="tema_12.html">Tema 12</a></li>
-                <li><a href="tema_15.html">Tema 15</a></li>
-            </ul>
-        </div>
-        </div>
+        <h2>
+        
+            <div class="flex-container">
+                <div><a href="tema_1.html">Tema 1</a></div>
+                <div><a href="tema_2.html">Tema 2</a></div>
+                <div><a href="tema_3.html">Tema 3</a></div>  
+            </div>
+            <div class="flex-container">   
+                <div><a href="tema_4.html">Tema 4</a></div>  
+                <div><a href="tema_5.html">Tema 5</a></div>  
+                <div><a href="tema_6.html">Tema 6</a></div> 
+            </div>
+            <div class="flex-container">
+                <div><a href="tema_7.html">Tema 7</a></div>  
+                <div><a href="tema_8.html">Tema 8</a></div>  
+                <div><a href="tema_9.html">Tema 9</a></div> 
+            </div>
+            <div class="flex-container">
+                <div><a href="tema_10.html">Tema 10</a></div>  
+                <div><a href="tema_11.html">Tema 11</a></div>  
+                <div><a href="tema_12.html">Tema 12</a></div>
+            </div>
+            <div class="flex-container">
+                <div><a href="tema_13.html">Tema 13</a></div>  
+                <div><a href="tema_14.html">Tema 14</a></div>  
+                <div><a href="tema_15.html">Tema 15</a></div>  
+            </div>
+       
+        </h2>
 
     </body>
 </html>
