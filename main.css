@@ -10,10 +10,10 @@ a {
   font-weight: bold;
   color: rgb(85, 84, 84);
 }
-.flex-box:hover{
+.flex-box:hover {
   background-color: gray;
 }
-a:hover{
-            
+
+a:hover {
   color: black;
- }
+}
