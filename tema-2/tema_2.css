@@ -1,0 +1,156 @@
+.container {
+    display: flex;
+    
+    text-align: left;
+    
+}
+img {
+    border-radius: 20%;
+    box-shadow: 5px 10px 5px rgba(173, 154, 101, 0.527);
+  }
+.item {
+   order: 5; 
+   text-align: auto;
+   margin: 10px;
+}
+h1 {
+    text-align: left;
+    color: rgb(59, 49, 85);
+    font-family: 'Garamond', serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 40px;
+}
+h2 {
+    text-align: left;
+    margin: 10px;
+    color: rgb(59, 49, 85);
+    font-size: 20px;
+    font-family: 'Garamond', serif;
+    text-indent: 20px;
+}
+html {
+    background-image: url("fundalTema2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+div.container.Paragraf {
+    font-family: 'Garamond', serif;
+    color: rgb(59, 49, 85);
+    font-size: 25px;
+    background-color: rgba(250, 204, 77, 0.678);
+    font-weight: bold;
+    size: 30px;
+}
+.paragrafText:hover {
+    font-size: 30px;
+    transition:  2s;
+}
+.container.PersonalDetails {
+    font-family: 'Garamond', serif;
+    color: rgb(59, 49, 85);
+    font-size: 15px;
+    font-weight: bold;
+}
+.container.Experience {
+    font-family: 'Garamond', serif;
+    color: rgb(59, 49, 85);
+    font-size: 15px;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: auto;
+ 
+}
+.itemJob1 {
+    font-size: 20px;
+    grid-column: 1;
+    grid-row: 1;
+}
+.itemPeriod1 {
+    grid-column: end;
+    grid-row: 1;
+}
+.itemCompany1 {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: green; 
+    grid-column: 1;
+    grid-row: 2;
+}
+.itemDescription1 {
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row: 3;
+}
+.itemJob2 {
+    font-size: 20px;
+    grid-column: 1;
+    grid-row: 4;
+}
+.itemPeriod2 {
+    grid-column: end;
+    grid-row: 4;
+}
+.itemCompany2 {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: green; 
+    grid-column: 1;
+    grid-row: 5;
+}
+.itemDescription2 {
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row: 6;
+}
+.container.Education {
+    font-family: 'Garamond', serif;
+    color: rgb(59, 49, 85);
+    font-size: 15px;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px ;
+    grid-template-rows: auto;
+ 
+}
+.itemQualification1 {
+    font-size: 20px;
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row: 1;
+}
+.itemPeriodEducation {
+    grid-column: end;
+    grid-row: 4;
+}
+.itemInstitution1 {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: green; 
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row: 2;
+}
+.itemQualification2 {
+    font-size: 20px;
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row: 3;
+}
+.itemPeriodEducation2 {
+    grid-column: end;
+    grid-row: 4;
+}
+.itemInstitution2 {
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: green; 
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row: 4;
+}
+a {
+    font-weight: bold;
+}
