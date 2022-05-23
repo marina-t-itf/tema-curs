@@ -57,10 +57,11 @@ div.container.Paragraf {
 }
 .paragrafText {
     padding-left: 20px;
+    font-size: 20px;
+    transition: font-size 2s;
 }
 .paragrafText:hover {
     font-size: 30px;
-    transition:  2s;
 }
 .container.PersonalDetails {
     font-family: 'Garamond', serif;
