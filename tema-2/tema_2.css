@@ -4,6 +4,12 @@
     text-align: left;
     
 }
+
+.container.Paragraf {
+    align-items: center;
+    height: 60px;
+}
+
 img {
     border-radius: 20%;
     box-shadow: 5px 10px 5px rgba(173, 154, 101, 0.527);
@@ -20,7 +26,13 @@ h1 {
     font-size: 35px;
     font-weight: bold;
     margin: 40px;
+    display: flex;
+    align-items: center;
 }
+h1 > span {
+    padding-left: 30px;
+}
+
 h2 {
     text-align: left;
     margin: 10px;
@@ -42,6 +54,9 @@ div.container.Paragraf {
     background-color: rgba(250, 204, 77, 0.678);
     font-weight: bold;
     size: 30px;
+}
+.paragrafText {
+    padding-left: 20px;
 }
 .paragrafText:hover {
     font-size: 30px;
