@@ -3,13 +3,13 @@ let myArray = [1, 9, 4, 2, 8, 4, 7, 2, 1, 5, 4, 4, 3, 3, 8, 9];
 let sum = 0;
 
 for (let i = 0; i < myArray.length; i++) {
-    console.log(myArray[i])
-  }
+    console.log(myArray[i]);
+}
   
-for (let i = 0; i <myArray.length; i++) {
+for (let i = 0; i < myArray.length; i++) {
     sum = sum + myArray[i];
 }
-console.log(sum)
+console.log(sum);
 
 let countFour = 0;
 
@@ -25,18 +25,15 @@ console.log(countFour)
 let mySecondArray =[];
 
 for (let i = 0; i < myArray.length; i++) {
-    
     mySecondArray[i] = myArray[i] - 1;
-
 }
-console.log(mySecondArray)
+console.log(mySecondArray);
 
 //subpunctul 2 -> necesita creativitate
 
 for (let i = 0; i < myArray.length; i++) {
-    if (myArray[i-1] === myArray[i]) {
-        console.log(myArray[i-1], myArray[i])
-        
+    if (myArray[i - 1] === myArray[i]) {
+        console.log(myArray[i-1], myArray[i]);
     }
 }
 
@@ -45,17 +42,31 @@ for (let i = 0; i < myArray.length; i++) {
 function myFunction() {
   
     let arrayElement = prompt('Please enter the number', 'Ex: 1, 2, ..., 16' );
-    for (let i = 0; i < mySecondArray.length; i++){
-        if (arrayElement != null) {
+    for (let i = 0; i < mySecondArray.length; i++) {
+        if (arrayElement !== null) {
             if (arrayElement - 1 === i) {
-                alert (mySecondArray[i])
-            console.log(mySecondArray[i])
+                alert(mySecondArray[i]);
+                console.log(mySecondArray[i]);
             }
         }
     }
     
 }
-console.log(myFunction())
+console.log(myFunction());
+
+
+// subpunctul 4
+
+for (let i = 0; i < mySecondArray.length; i++) {
+    let currentItem = mySecondArray[i];
+    if (currentItem <= 4) {
+        mySecondArray[i] = [currentItem, currentItem + 1, currentItem + 2];
+    } else {
+        mySecondArray[i] = [currentItem, currentItem - 1, currentItem - 2];
+    }
+}
+
+console.log(mySecondArray);
 
 //subpunctul 4 -> necesita creativitate
  
