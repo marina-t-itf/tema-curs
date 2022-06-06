@@ -80,26 +80,31 @@ console.log(myFunction())
 // console.log(newMySecondArray)
 
 // function myFunctionModel() {
-//     let a = 0;
-//     let b = 0;
-//     let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
-//     let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
-//     if (N != null & X != null & X<=N) {
-//         for (i=0; i<X; i++) {
-//             for (j=0; j<N; j++) {
-//                 if (j%2 === 0) {
-//                     a = '0';
-                    
-//                 }
-//              if (j%2 === 1) {
-//                  a = '1';
-//                 }
-//               if (j === X) {
-//                   a ='='
-//               }
-//               console.log(a)
-//             }
-//         }
-//     }
+    // let a = [];
+    // let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+    // let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+    // if (N != null & X != null & X<=N) {
+    //     for (let i = 0; i < N; i++) {
+    //         for (let j = 0; j < N; j++) {
+    //             if (j % 2 === 0) {
+    //                 a [i]= '0'; 
+    //                 // console.log(a[i])
+    //             }
+    //         // }
+    //         // for (let k = 0; k < N; k++) {
+    //             if (j % 2 === 1) {
+    //              a [i]= '1';
+    //             //  console.log(a[j])
+    //             }
+    //         // }
+    //         // for (let l = 0; l < N; l++) {
+    //             if (j === X) {
+    //               a [i]='=';
+    //             //   console.log(a[j])
+    //             }
+    //           console.log(a[i])
+    //         }
+    //     }
+    // }
 // }    
 // console.log(myFunctionModel())
