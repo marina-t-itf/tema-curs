@@ -79,32 +79,35 @@ console.log(myFunction())
 // }
 // console.log(newMySecondArray)
 
-// function myFunctionModel() {
-    // let a = [];
-    // let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
-    // let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
-    // if (N != null & X != null & X<=N) {
-    //     for (let i = 0; i < N; i++) {
-    //         for (let j = 0; j < N; j++) {
-    //             if (j % 2 === 0) {
-    //                 a [i]= '0'; 
-    //                 // console.log(a[i])
-    //             }
-    //         // }
-    //         // for (let k = 0; k < N; k++) {
-    //             if (j % 2 === 1) {
-    //              a [i]= '1';
-    //             //  console.log(a[j])
-    //             }
-    //         // }
-    //         // for (let l = 0; l < N; l++) {
-    //             if (j === X) {
-    //               a [i]='=';
-    //             //   console.log(a[j])
-    //             }
-    //           console.log(a[i])
-    //         }
-    //     }
-    // }
+// let myFunctionModel = function() {
+//     let a = [];
+    
+//     let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+//     let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+//     if (N != null & X != null & X <= N) {
+//         for (let i = 0; i < N; i++) {
+//             for (let j = 0; j < N; j++) {
+//                 if (j % 2 === 0) {
+//                     a [j]= '0'; 
+                    
+//                     // console.log('0')
+//                 }
+//             // }
+//             // for (let k = 0; k < N; k++) {
+//                 if (j % 2 === 1) {
+//                  a [j]= '1';
+//                 //  console.log('1')
+//                 }
+//             // }
+//             // for (let l = 0; l < N; l++) {
+//                 if (j === X) {
+//                   a [j] ='=';
+//                 //   console.log('=')
+//                 }
+                
+//               console.log(a[i])
+//             }
+//         }
+//     }
 // }    
-// console.log(myFunctionModel())
+// myFunctionModel();
