@@ -68,57 +68,77 @@ for (let i = 0; i < mySecondArray.length; i++) {
 
 console.log(mySecondArray);
 
-//subpunctul 4 -> necesita creativitate
- 
-// let newMySecondArray = [];
-// let miniArray = [];
 
-// let countElement = 0;
-// for(let i = 0; i < mySecondArray.length; i++){
-//     if (mySecondArray[i] <= 4) {
-//         for (let j = countElement; j<= 2; j++){
-//             newMySecondArray[j] = mySecondArray[i];
-//             if (newMySecondArray[j] <= 4) {
-//                 newMySecondArray[j] = newMySecondArray[j] + 1;
-//                 countElement++;
+// let designArray = [];
+// let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+// let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+// let copyN = N;
+// if (X <= N & N != null & X != null) {
+//     for (let i = 0; i < N; i++) {
+//         designArray = [designArray[i]];
+//         for (let j = 0; j < copyN; j++) {
+//             if (j % 2 === 0 && j !== X) {
+//                 designArray[j] = '0';
+//                 designArray[i] = designArray[j];
 //             }
-
-//         }
-//          countElement++;
-//     }   
-    
-// }
-// console.log(newMySecondArray)
-
-// let myFunctionModel = function() {
-//     let a = [];
-    
-//     let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
-//     let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
-//     if (N != null & X != null & X <= N) {
-//         for (let i = 0; i < N; i++) {
-//             for (let j = 0; j < N; j++) {
-//                 if (j % 2 === 0) {
-//                     a [j]= '0'; 
-                    
-//                     // console.log('0')
-//                 }
-//             // }
-//             // for (let k = 0; k < N; k++) {
-//                 if (j % 2 === 1) {
-//                  a [j]= '1';
-//                 //  console.log('1')
-//                 }
-//             // }
-//             // for (let l = 0; l < N; l++) {
-//                 if (j === X) {
-//                   a [j] ='=';
-//                 //   console.log('=')
-//                 }
-                
-//               console.log(a[i])
+//             if (j % 2 === 1 && j !== X) {
+//                 designArray[j] = '1';
+//                 designArray[i] = designArray[j];
+//             }
+//             if (i === X - 1) {
+//                 designArray[j] = '=';
+//                 designArray[i] = designArray[j];
 //             }
 //         }
+        
+//         copyN = copyN - 1;
+//         console.log(designArray);
+//         // designArray = [designArray[i]];
 //     }
-// }    
-// myFunctionModel();
+//     // console.log(finalDesignArray);
+// }
+
+//subpunctul 5
+
+let finalDesignArray = [];
+let designArray = [];
+let N = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+let X = prompt('Please enter the number', 'Ex: 1, 2, ...' );
+let copyN = N;
+if (X <= N & N != null & X != null) {
+    for (let i = 0; i < N; i++) {
+        designArray = [finalDesignArray[i]];
+        for (let j = 0; j < copyN; j++ ) {
+            if (i % 2 === 0) {
+                if (j % 2 === 0 && j !== X) {
+                    designArray[j] = '0';
+                    finalDesignArray[i] = designArray[j];
+                }
+                if (j % 2 === 1 && j !== X) {
+                    designArray[j] = '1';
+                    finalDesignArray[i] = designArray[j];
+                }
+                if (i === X - 1) {
+                    designArray[j] = '=';
+                    finalDesignArray[i] = designArray[j];
+                }
+            }
+            if (i % 2 === 1) {
+                if (j % 2 === 0 && j !== X) {
+                    designArray[j] = '1';
+                    finalDesignArray[i] = designArray[j];
+                }
+                if (j % 2 === 1 && j !== X) {
+                    designArray[j] = '0';
+                    finalDesignArray[i] = designArray[j];
+                }
+                if (i === X - 1) {
+                    designArray[j] = '=';
+                    finalDesignArray[i] = designArray[j];
+                }
+            }
+        }   
+        copyN = copyN - 1;
+        console.log(designArray);
+    }
+}
