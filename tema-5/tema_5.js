@@ -1,34 +1,34 @@
 // subpunctul 1
 
-// let sumFunction = function (a, b) {
-//     a = parseInt(a);
-//     b = parseInt(b);
-//     return a + b;
+let sumFunction = function (a, b) {
+    a = parseInt(a);
+    b = parseInt(b);
+    return a + b;
     
-// };
+};
 
-// let decreasesFunction = function (a, b) {
-//     return a - b;
-// };
+let decreasesFunction = function (a, b) {
+    return a - b;
+};
 
-// let multiplicationFunction = function(a, b) {
-//     return a * b;
-// };
+let multiplicationFunction = function(a, b) {
+    return a * b;
+};
 
-// let divisionFuncion = function(a, b) {
-//     return a / b;
-// };
+let divisionFuncion = function(a, b) {
+    return a / b;
+};
 
 
-// console.log(sumFunction(1,2));
-// console.log(decreasesFunction(1,2));
-// console.log(multiplicationFunction(1,2));
-// console.log(divisionFuncion(1,2));
+console.log(sumFunction(1,2));
+console.log(decreasesFunction(1,2));
+console.log(multiplicationFunction(1,2));
+console.log(divisionFuncion(1,2));
 
 // subpunctul 2
 
-// let x = prompt('Please enter the number', );
-//  x = parseInt(x);
+let x = prompt('Please enter the number', );
+ x = parseInt(x);
 
 // console.log(sumFunction(3, x));
 // console.log(sumFunction(divisionFuncion(4, x), 5));
@@ -40,39 +40,39 @@
 // console.log(divisionFuncion(multiplicationFunction(x,sumFunction(decreasesFunction(34, x), 10)), 6));
 // console.log(decreasesFunction(sumFunction(divisionFuncion(4, x), 5), divisionFuncion(multiplicationFunction(x,sumFunction(decreasesFunction(34, x), 10)), 6)));
 
-// console.log(sumFunction(decreasesFunction(sumFunction(divisionFuncion(4, x), 5), divisionFuncion(multiplicationFunction(x,sumFunction(decreasesFunction(34, x), 10)), 6)), x));
+console.log(sumFunction(decreasesFunction(sumFunction(divisionFuncion(4, x), 5), divisionFuncion(multiplicationFunction(x,sumFunction(decreasesFunction(34, x), 10)), 6)), x));
 
 // subiectul 2
 
-// let n = prompt('Please enter the number', );
-// let copyOfN = n;
-// let lenghtOfN = n.length;
-// let p = true;
-// let halfValue = divisionFuncion(lenghtOfN, 2);
-// let palindromFunction = function () {
-//     for (let i = 0; i < halfValue; i++) {
+let n = prompt('Please enter the number', );
+let copyOfN = n;
+let lenghtOfN = n.length;
+let p = true;
+let halfValue = divisionFuncion(lenghtOfN, 2);
+let palindromFunction = function () {
+    for (let i = 0; i < halfValue; i++) {
        
-//         if (lenghtOfN > halfValue) {
-//             let y = n.charAt(i);
-//             let z = n.charAt(lenghtOfN-1);
-//             if (y !== z) {
-//                 p = false;
-//                 // console.log(true);
-//             } else {
-//                 p = true;
-//                 //    console.log(false);
-//             }
-//             lenghtOfN = lenghtOfN - 1;
-//         }
-//     }
-//     if (p === false) {
-//         console.log(copyOfN, ' nu este palindrom');
-//     } else {
-//         console.log(copyOfN, ' este palindrom');
-//     }
-// };
+        if (lenghtOfN > halfValue) {
+            let y = n.charAt(i);
+            let z = n.charAt(lenghtOfN-1);
+            if (y !== z) {
+                p = false;
+                // console.log(true);
+            } else {
+                p = true;
+                //    console.log(false);
+            }
+            lenghtOfN = lenghtOfN - 1;
+        }
+    }
+    if (p === false) {
+        console.log(copyOfN, ' nu este palindrom');
+    } else {
+        console.log(copyOfN, ' este palindrom');
+    }
+};
 
-// palindromFunction();
+palindromFunction();
 
 // subiectul 3
 
@@ -100,3 +100,39 @@ let theLongestWord = function() {
 };
 
 theLongestWord();
+
+
+// creativitate subiectul 2
+
+let sumArrayElement =  [2, 4, 8, 1, 9, 4, 5, 5, 8, 9, 1, 3, 2];
+let sumArray = 0;
+let sumArrayFunction = function() {
+    for (let i = 0; i < sumArrayElement.length; i++) {
+        sumArray = sumArray + sumArrayElement[i];
+    }
+    console.log(sumArray);
+};
+
+sumArrayFunction();
+
+// creativitate subiectul 3
+let car = {
+    ownerName: ' Popescu Maria',
+    sex: 'F',
+    name: ' Skoda',
+    type: 'Octavia',
+    registrationNumber: 'B 21 SKD',
+    color: 'black',
+    condition: 'damaged',
+    status: 'functional',
+    writeServiceStatusToConsole: function() {
+      let prefix = 'Mr. ';
+      if (car.sex !== 'm') {
+        prefix = 'Mrs. ';
+      }
+      console.log(prefix + car.ownerName + ' ' + ' your ' + car.name + ' ' + car.type + ' is ' + car.status + '.');
+    }
+ };
+  
+ car.writeServiceStatusToConsole();
+ 
