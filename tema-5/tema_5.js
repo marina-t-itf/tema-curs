@@ -117,11 +117,12 @@ sumArrayFunction();
 
 // creativitate subiectul 3
 let car = {
-    ownerName: ' Popescu Maria',
+    ownerName: 'Popescu Maria',
     sex: 'F',
     name: ' Skoda',
     type: 'Octavia',
     registrationNumber: 'B 21 SKD',
+    insuranceEndDate: ' 17.06.2022',
     color: 'black',
     condition: 'damaged',
     status: 'functional',
@@ -132,7 +133,48 @@ let car = {
       }
       console.log(prefix + car.ownerName + ' ' + ' your ' + car.name + ' ' + car.type + ' is ' + car.status + '.');
     }
+    // writeInsuranceToConsole: function () {
+    //     let statusInsurance = 'active';
+    //     if (car.insuranceEndDate < new Date()) {
+    //         statusInsurance = 'inactive';
+    //     }
+    //     console.log();
+    // },
+    
+
  };
   
  car.writeServiceStatusToConsole();
+
+
+
  
+// creativitate subpunctul 1
+
+let factorial = function()  {
+    let thisNumber = prompt('Please enter the sentence', );
+    let factorialNumber = 1;
+    // if (thisNumber - Math.floor(thisNumber) > 0.5 || thisNumber - Math.ceil(thisNumber) > 0.5) {
+    //     thisNumber = Math.ceil(thisNumber);
+    // } else {
+    //     thisNumber = Math.floor(thisNumber);
+    // }
+    let integerNumber1 = Math.floor(thisNumber);
+    let integerNumber2 = Math.ceil(thisNumber);
+    if (thisNumber - integerNumber1 === 0 || thisNumber - integerNumber2 === 0 ) {
+        if (thisNumber > 0) {
+            for (let i = 1; i <= thisNumber; i++) {
+                factorialNumber = factorialNumber * i;
+            }
+            console.log(factorialNumber);
+        }
+    } else {
+        console.log('This number is not integer');
+    }
+    
+    if (thisNumber <= 0) {
+        console.log( -1);
+    }
+};
+factorial();
+
