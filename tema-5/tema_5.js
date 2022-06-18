@@ -115,37 +115,45 @@ let sumArrayFunction = function() {
 
 sumArrayFunction();
 
-// creativitate subiectul 3
+// creativitate subiectul 3 si 4
 let car = {
     ownerName: 'Popescu Maria',
     sex: 'F',
     name: ' Skoda',
     type: 'Octavia',
     registrationNumber: 'B 21 SKD',
-    insuranceEndDate: ' 17.06.2022',
     color: 'black',
     condition: 'damaged',
     status: 'functional',
     writeServiceStatusToConsole: function() {
       let prefix = 'Mr. ';
-      if (car.sex !== 'm') {
+      if (this.sex !== 'm') {
         prefix = 'Mrs. ';
       }
-      console.log(prefix + car.ownerName + ' ' + ' your ' + car.name + ' ' + car.type + ' is ' + car.status + '.');
+      console.log(prefix + this.ownerName + ' ' + ' your ' + this.name + ' ' + this.type + ' is ' + this.status + '.');
+      
+    },
+    writeInsuranceToConsole: function () {
+        let moreCarInformation = {
+            insuranceSartDate: 3 ,
+            insuranceEndDate: 6 ,
+            getInsuranceFunction: function() {
+                let data = prompt('Please enter the sentence', 'Ex.: m' );
+                let statusInsurance = 'active';
+                if(this.insuranceEndDate < data) {
+                    statusInsurance = 'inactive';
+                    console.log('Your insurance is ' + statusInsurance); 
+                    return statusInsurance;
+                }
+            },
+         }
+        return moreCarInformation;
     }
-    // writeInsuranceToConsole: function () {
-    //     let statusInsurance = 'active';
-    //     if (car.insuranceEndDate < new Date()) {
-    //         statusInsurance = 'inactive';
-    //     }
-    //     console.log();
-    // },
-    
 
  };
   
  car.writeServiceStatusToConsole();
-
+ car.writeInsuranceToConsole().getInsuranceFunction();
 
 
  
