@@ -76,23 +76,35 @@ let alertSecondButton = function() {
 
 
 // document.addEventListener("click", createButton);
+let click3 = function() {
+    let startButton = document.createElement('button'); 
+        startButton.innerHTML = 'Step 3';
+        // startButton.addEventListener('click', );
 
-let clickFunction = function() {
+        document.body.appendChild(startButton);
+};
+
+let click2 = function() {
+    let startButton = document.createElement('button'); 
+        startButton.innerHTML = 'Step 2';
+        startButton.addEventListener('click', click3);
+
+        document.body.appendChild(startButton);
+};
+
+let click1 = function() {
     let startButton = document.createElement('button'); 
         startButton.innerHTML = 'Step 1';
+        startButton.addEventListener('click', click2);
+
         document.body.appendChild(startButton);
-       
-        // stepButton = document.createTextNode('Step 1');
-        // startButton.appendChild(stepButton);
-        // document.body.appendChild(Start);
-        return startButton;
 };
 
-let createButton = function(name, action) {
+let createButton = function(name, actionFunction) {
     let button = document.createElement('button');
     button.innerHTML = name;
-    button.addEventListener('click', action);
+    button.addEventListener('click', actionFunction);
     return button;
 };
-document.body.appendChild(createButton('Start', clickFunction));
+document.body.appendChild(createButton('Start', click1));
 
