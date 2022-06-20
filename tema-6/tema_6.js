@@ -77,10 +77,22 @@ let alertSecondButton = function() {
 
 // document.addEventListener("click", createButton);
 
+let clickFunction = function() {
+    let startButton = document.createElement('button'); 
+        startButton.innerHTML = 'Step 1';
+        document.body.appendChild(startButton);
+       
+        // stepButton = document.createTextNode('Step 1');
+        // startButton.appendChild(stepButton);
+        // document.body.appendChild(Start);
+        return startButton;
+};
+
 let createButton = function(name, action) {
     let button = document.createElement('button');
     button.innerHTML = name;
     button.addEventListener('click', action);
     return button;
 };
-document.body.appendChild(createButton('Start', onclick));
+document.body.appendChild(createButton('Start', clickFunction));
+
