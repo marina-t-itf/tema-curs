@@ -1,13 +1,24 @@
 // https://www.w3schools.com/cssref/tryit.asp?filename=trycss_js_right
 
+
+let initialPositionSquare = function() {
+    let square = document.querySelector('.popup');
+    square.style.position = 'fixed';
+    square.style.top = '50px';
+    square.style.left = '50px';
+}
+
+initialPositionSquare();
+
 let onSquareClick = function () {
-    // let theSquare = document.querySelector('.square');
-    // theSquare.style.right = '50px';
-    // document.getElementsByClassName('square').style.right= '50px';
-    let square = document.querySelector('.sqaure');
-    square.style.width = '200px';
+    let square = document.querySelector('.popup');
+    square.style.position = 'fixed';
+    square.style.removeProperty('top');
+    square.style.removeProperty('left');
+    square.style.bottom = "50px";
+    square.style.right = "50px";
 };
 
 
-let adjustedSquare = document.querySelector('.square');
+let adjustedSquare = document.querySelector('.popup');
 adjustedSquare.addEventListener('click', onSquareClick);
