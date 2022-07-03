@@ -127,14 +127,18 @@ axios
 
 
         let bringName = function() {
+            // let personName = document.querySelector('.rowTabel1');
             for (i=0; i<response.data.length; i++) {
                 console.log(response.data[i].name);
+            //     let table = document.getElementsByClassName('table');
+            //     let row = table.insertRow(0);
+            //     let cell1 = row.insertCell(0);
+            //     let cell2 = row.insertCell(1);
+                    
+            //     cell1.innerText = response.data[i].name;
 
-                let bringRow = document.querySelector('.longRow');
-                bringRow.style.color= 'orange';
-
-                let personName = document.querySelector('.name');
-                personName.innerText = response.data[0].name;
+                let personName = document.querySelector('.rowTabel-'+ (i+1));
+                personName.innerText = response.data[i].name;
             }
         }
 
@@ -147,3 +151,16 @@ axios
         console.log(error);
     })
 ;
+
+
+// let myCreateFunction = function() {
+//     let initialTabel = document.querySelectorAll('.myTabel');
+//     let table = document.getElementById('myTable');
+//     let row = table.insertRow();
+//     let cell1 = row.insertCell();
+//     let cell2 = row.insertCell();
+//     cell1.innerHTML = "NEW CELL1";
+//     cell2.innerHTML = "NEW CELL2";
+// }
+
+// myCreateFunction();
