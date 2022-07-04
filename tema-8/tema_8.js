@@ -1,10 +1,14 @@
 
 let popupCloseButton = document.querySelector('.closeButton > span');
+let showButton = document.querySelector('.btn');
 
 let popupClose = function () {
     // hide the popup
     let tablePopup = document.querySelector('.tableWindow');
     tablePopup.style.display = 'none';
+
+    let launchButton = document.querySelector('.btn');
+    launchButton.style.display = 'block';
 };
 
 popupCloseButton.addEventListener('click', popupClose);
@@ -15,6 +19,9 @@ let popupOpen = function () {
     // show the popup
     let tablePopup = document.querySelector('.tableWindow');
     tablePopup.style.display = 'block';
+
+    let launchButton = document.querySelector('.btn');
+    launchButton.style.display = 'none';
 };
 
 showPopup.addEventListener('click', popupOpen);
@@ -42,8 +49,8 @@ axios
 
 
         // let bringName = function() {
-        let initialTabel = document.querySelectorAll('.myTabel');
-        let myCreateFunction = function(initialTabel) {
+        let initialTable = document.querySelectorAll('.myTabel');
+        let myCreateFunction = function(initialTable) {
             for (i=0; i<response.data.length; i++) {
                 console.log(response.data[i].name);
 
