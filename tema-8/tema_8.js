@@ -56,11 +56,12 @@ axios
 
                 let tableRef = document.getElementById('myTabel');
                 let row = tableRef.insertRow(i);
-                let cell1 = row.insertCell();
+                let cell1 = document.createElement('th');
+                cell1.innerHTML = i+1;
+                row.appendChild(cell1);
                 let cell2 = row.insertCell();
                 let cell3 = row.insertCell();
                 let cell4 = row.insertCell();
-                cell1.innerHTML = i+1;
                 cell2.innerHTML = response.data[i].name;;
                 cell3.innerHTML = " ";
                 cell4.innerHTML = "NEW CELL4";
