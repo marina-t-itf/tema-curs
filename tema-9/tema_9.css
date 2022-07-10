@@ -1,0 +1,45 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    width: 500px;
+}
+
+
+.table {
+    border: 5px solid;
+}
+
+
+.dateTh {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.numberCell {
+    color: rgb(141, 140, 140);
+}
+
+
+.dataCell {
+    color: rgb(141, 140, 140);
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+h1, h3, h5 {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.thead {
+
+    color: rgb(141, 140, 140);
+}
