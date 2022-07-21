@@ -4,26 +4,50 @@
     right: 30px;
 }
 
-a {
-    color: #ff9900;
+a.homePage {
+    color: #f3f2f1;
     font-weight: bold;
-    
+    text-shadow: 4px 2px 2px black;
+    text-decoration: none;
+}
+a:hover {
+    color: #f3f2f1;
 }
 
-img {
+
+.crewImages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: justify;
+}
+
+.imageDiv {
     padding: 10px;
+    position: relative;
+    display: flex;
+}
+
+.nameMember {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    color: hsl(51, 88%, 66%);
+    font-weight: bold;
+    text-shadow: 4px 2px 2px black;
+    font-size: 25px;
 }
 
 h1 {
     padding-top: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: #ff9900;
+    color: hsl(51, 88%, 66%);
     text-shadow: 2px 2px 5px rgb(247, 125, 54);
 }
 
 body {
-    background-color: rgb(148, 148, 148);
+    background-color: rgb(43, 71, 77);
 }
 
 #map { 
