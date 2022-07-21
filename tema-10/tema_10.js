@@ -26,3 +26,14 @@ axios
         console.log(error);
     })
 ;
+
+// crearea unei harti in JS
+let map = L.map('map').setView([33.91, -118.38], 10);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// creare marcator in functie de coordonate
+let marker = L.marker([33.91, -118.38]).addTo(map);
