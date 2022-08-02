@@ -3,7 +3,7 @@ axios
     .then(function (response) {
         console.log(response);
 
-        let myCreateFunction = function(initialDiv) {
+        let myCreateFunction = function() {
             for (i=0; i<response.data.length; i++) {
                 console.log(response.data[i].image);
                 console.log(response.data[i].name);
@@ -17,18 +17,21 @@ axios
                 newImage.innerHTML = response.data[i].image;
 
                 newImage.setAttribute('src', response.data[i].image);
-                newImage.setAttribute('width', '300');
-                newImage.setAttribute('height', '300');
-                newDiv.setAttribute('width', '300');
-                newDiv.setAttribute('height','300');
-                newDivImage.setAttribute('width', '300');
-                newDivImage.setAttribute('height', '300');
+                // newImage.setAttribute('width', '300');
+                // newImage.setAttribute('height', '300');
+                // newDiv.setAttribute('width', '300');
+                // newDiv.setAttribute('height','300');
+                // newDivImage.setAttribute('width', '300');
+                // newDivImage.setAttribute('height', '300');
 
                 newDiv.classList.add('nameMember');
                 newDivImage.classList.add('imageDiv');
+
+                newDivImage.style.backgroundImage = `url(${response.data[i].image})`;
                 
                 newDivImage.appendChild(newDiv);
-                initialDiv.appendChild(newDivImage).appendChild(newImage);
+                initialDiv.appendChild(newDivImage);
+                // .appendChild(newImage);
             }
         }
         myCreateFunction();

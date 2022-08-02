@@ -19,18 +19,28 @@ a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: justify;
+
 }
 
 .imageDiv {
-    padding: 10px;
+    padding: 5px;
     position: relative;
-    display: flex;
+    height: 300px; 
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: content-box;
+    border-style: groove;
+    border-color: #f0e65f;
+    background-color: black;
 }
 
 .nameMember {
     position: absolute;
     bottom: 16px;
-    left: 16px;
+    left: auto;
+    right: auto;
     color: hsl(51, 88%, 66%);
     font-weight: bold;
     text-shadow: 4px 2px 2px black;
