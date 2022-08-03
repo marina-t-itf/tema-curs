@@ -8,8 +8,8 @@ index.companyMap = {
             index.companyMap.map = L
                 .map('map')
                 .setView(
-                    [25, 0],
-                    2
+                    [25, 25],
+                    2,
                 )
             ;
 
@@ -39,7 +39,7 @@ index.companyMap = {
                         color: 'yellow',
                         fillColor: 'yellow',
                         fillOpacity: 0.2,
-                        radius: 200000
+                        radius: 200000,
                     }
                 )
                 .addTo(index.companyMap.map)
