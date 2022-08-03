@@ -8,7 +8,7 @@ index.companyMap = {
             index.companyMap.map = L
                 .map('map')
                 .setView(
-                    [20, 20],
+                    [25, 0],
                     2
                 )
             ;
@@ -44,10 +44,10 @@ index.companyMap = {
                 )
                 .addTo(index.companyMap.map)
             ;
-               
             }
         }
 
     }
 
 };
+
