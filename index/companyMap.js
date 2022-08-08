@@ -32,14 +32,38 @@ index.companyMap = {
         if (type === 'launchpads') {
             let launchpadsData = index.data.launchpadsData;
             for (let i = 0; i < launchpadsData.length; i++) {
+                //------------------------------------------------
+                // L
+                // .circle(
+                //     [launchpadsData[i].latitude, launchpadsData[i].longitude],
+                //     {
+                //         color: 'yellow',
+                //         fillColor: 'yellow',
+                //         fillOpacity: 0.2,
+                //         radius: 200000,
+                //     }
+                // )
+                // .addTo(index.companyMap.map)
+                //------------------------------------------------
+                // cerc marker map care isi mareste sau miscoreaza dimensiunea in functie de zoom
+
+                // L
+                // .circle(
+                //     [launchpadsData[i].latitude, launchpadsData[i].longitude],
+                //     {
+                //         radius: 200000
+                //     }
+                // )
+                // .addTo(index.companyMap.map)
+                //------------------------------------------------
+                // cerc marker map care isi mareste sau miscoreaza dimensiunea in functie de zoom
+
                 L
-                .circle(
-                    [launchpadsData[i].latitude, launchpadsData[i].longitude],
+                .circleMarker(
+                    [launchpadsData[i].latitude, launchpadsData[i].longitude], 
                     {
-                        color: 'yellow',
-                        fillColor: 'yellow',
-                        fillOpacity: 0.2,
-                        radius: 200000,
+                        radius: 20,
+                        color: 'yellow'
                     }
                 )
                 .addTo(index.companyMap.map)
