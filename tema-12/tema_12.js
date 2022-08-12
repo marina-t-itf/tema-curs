@@ -4,54 +4,36 @@ axios
         // handle success
         console.log(response);
 
-        // only the data about crew
-        // console.log(response.data);
-
-        // only data of one member of the crew
-        // console.log(response.data[0]);
-
-        // only the name of one member of the crew
-        // console.log(response.data[0].name);
-
-
-        // all names for the crew members in console
-        // for (i=0; i<response.data.length; i++) {
-        //     console.log(response.data[i].name);
-        // }
-
-
-        // let bringName = function() {
-        let initialTable = document.querySelectorAll('.myTabel');
-        let myCreateFunction = function(initialTable) {
+        let bringLaunchesData = function() {
             for (i=0; i<response.data.length; i++) {
                 console.log(response.data[i].date_utc);
 
-                let tableRef = document.getElementById('myTabel');
-                let row = tableRef.insertRow(i);
-                let cell1 = document.createElement('th');
-                cell1.innerHTML = i+1;
-                row.appendChild(cell1);
-                let cell2 = row.insertCell();
-                let cell3 = row.insertCell();
-                let cell4 = row.insertCell();
-                cell2.innerHTML = response.data[i].date_utc;;
-                cell3.innerHTML = " ";
-                cell4.innerHTML = "NEW CELL4";
-                if(i% 2 === 1) {
-                    row.className = 'Row table-active';
+                let allLaunches = response.data[i].date_utc.split('T')[0];
+                console.log(allLaunches);
+                let yearAsNumber = parseInt(response.data[i].date_utc.split('-')[0]);
+                let monthAsNumber = parseInt(response.data[i].date_utc.split('-')[1]);
+                console.log(yearAsNumber);
+                console.log(monthAsNumber);
+                if(yearAsNumber === 2022 && monthAsNumber === 08) {
+                    console.log(response.data[i].date_utc.split('T')[0]);
                 }
-            }
-                // let personName = document.querySelector('.rowTabel-'+ (i+1));
-                // personName.innerHTML = response.data[i].name;
-        }
-        // }
-    
-        // bringName();
-        myCreateFunction();
 
-    })
+            }
+        
+           
+        }
+        bringLaunchesData();
+    }
+    )
     .catch(function (error) {
         // handle error
         console.log(error);
     })
 ;
+
+let getLaunchesForMonth = function(yearAsNumber, monthAsNumber, allLaunches) {
+    let launchesForMonth = []; 
+    
+
+    return launchesForMonth;
+}
