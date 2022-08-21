@@ -54,3 +54,6 @@ td {
     font-size: 20px;
     font-weight: normal;
 }
+img.bullet {
+    width: 40px;
+}

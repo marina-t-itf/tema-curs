@@ -37,3 +37,13 @@ let getLaunchesForMonth = function(yearAsNumber, monthAsNumber, allLaunches) {
 
     return launchesForMonth;
 }
+
+let addBulletInTable = function(theNumber) {
+    let img = document.createElement("img");
+    img.src = "../images/ellipse.png";
+    // let src = document.getElementById("myTabel");
+    let src = theNumber.getAttribute("data-the-number-of-day");
+    src.appendChild(img);
+}
+
+addBulletInTable();
