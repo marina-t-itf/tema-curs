@@ -1,0 +1,16 @@
+#unsortedArray {
+    width: 250px;
+    height: 100px;
+    color: darkblue;
+    font-weight: bold;
+    display: flex;
+    font-size: 40px;
+}
+#sortedArray {
+    width: 250px;
+    height: 100px;
+    color: green;
+    font-weight: bold;
+    display: flex;
+    font-size: 40px;
+}
