@@ -89,12 +89,6 @@ axios
                 newImage.innerHTML = response.data[i].image;
 
                 newImage.setAttribute('src', response.data[i].image);
-                // newImage.setAttribute('width', '300');
-                // newImage.setAttribute('height', '300');
-                // newDiv.setAttribute('width', '300');
-                // newDiv.setAttribute('height','300');
-                // newDivImage.setAttribute('width', '300');
-                // newDivImage.setAttribute('height', '300');
 
                 newDiv.classList.add('nameMember');
                 newDivImage.classList.add('imageDiv');
@@ -103,13 +97,36 @@ axios
                 
                 newDivImage.appendChild(newDiv);
                 initialDiv.appendChild(newDivImage);
-                // .appendChild(newImage);
+
+                // let crewMember = {
+                //     image: src = 'url(${response.data[i].image})',
+                //     name: response.data[i].name
+                // }
+                // console.log(crewMember);
             }
+            // return (crewMember);
         }
         myCreateFunction();
+
     })
     .catch(function (error) {
         // handle error
         console.log(error);
     })
 ;
+
+// myCreateFunction();
+
+// let sortImages = function(crewMember) {
+//     let sortButton = document.getElementById("sortButton")
+//     crewMember.sort(function(a, b){
+//         let x = a.name.toLowerCase();
+//         let y = b.name.toLowerCase();
+//         if (x < y) {return -1;}
+//         if (x > y) {return 1;}
+//         return 0;
+//         });
+ 
+//     sortButton.addEventListener('click', sortImages);
+//     myCreateFunction();
+// }
