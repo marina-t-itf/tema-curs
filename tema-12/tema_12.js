@@ -96,13 +96,22 @@ axios
 // createCalendar(calendar, 2022, 8);
 //-------------------------------------------------------
 
-let createCalendar = function(elem, year, month) {
+let createCalendar = function(year, month) {
 
     let mon = month - 1; // months in JS are 0..11, not 1..12
     let d = new Date(year, mon);
 
     let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
     
+    let monthName = document.querySelector('div.monthName');
+    let monthNameArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    for( let i = 0; i < 12; i++) {
+        
+        if( mon === i) {
+            monthName.innerHTML = monthNameArray[i];
+        }
+    }
+        
     // spaces for the first row
     // from Monday till the first day of the month
     // * * * 1  2  3  4
@@ -111,10 +120,10 @@ let createCalendar = function(elem, year, month) {
     }
 
     // <td> with actual dates
-    for(; d.getMonth() == mon ;){
+    for(; d.getMonth() === mon ;){
         table += '<td>' + d.getDate() + '</td>';
 
-        if (getDay(d) % 7 == 6) { // sunday, last day of week - newline
+        if (getDay(d) % 7 === 6) { // sunday, last day of week - newline
             table += '</tr><tr>';
         }
 
@@ -123,7 +132,7 @@ let createCalendar = function(elem, year, month) {
 
     // add spaces after last days of month for the last row
     // 29 30 31 * * * *
-    if (getDay(d) != 0) {
+    if (getDay(d) !== 0) {
         for (let i = getDay(d); i < 7; i++) {
             table += '<td></td>';
         }
@@ -132,13 +141,55 @@ let createCalendar = function(elem, year, month) {
     // close the table
     table += '</tr></table>';
 
-    elem.innerHTML = table;
+    let createdCalendar = document.querySelector('div#calendar');
+    createdCalendar.innerHTML = table;
+    // elem.innerHTML = table;
+
 }
 
 let getDay = function(date) { // get day number from 0 (monday) to 6 (sunday)
     let day = date.getDay();
-    if (day == 0) day = 7; // make Sunday (0) the last day
+    if (day === 0) day = 7; // make Sunday (0) the last day
         return day - 1;
 }
 
-createCalendar(calendar, 2022, 8);
+let newMonth = new Date().getMonth() + 1;
+createCalendar( 2022, newMonth);
+
+// let onButtonClick = function() {
+//     if (newMonth <= new Date().getMonth() + 1) {
+//         let button = document.querySelector('previewButton');
+//         newMonth = newMonth - 1;
+       
+//         onPreviewButtonClick();
+        
+//     }
+//     if (newMonth >= new Date().getMonth() + 1) {
+//         let button = document.querySelector('nextButton');
+//         newMonth = newMonth + 1;
+    
+//         onNextButtonClick();
+        
+//     }
+// }
+
+let onPreviewButtonClick = function() {
+    let button = document.querySelector('previewButton');
+   
+    if( newMonth <= new Date().getMonth() + 1 ) {
+        newMonth = newMonth - 1;
+    }
+          
+    createCalendar(2022, newMonth);
+    // return (newMonth);
+};
+
+let onNextButtonClick = function() {
+    let button = document.querySelector('nextButton');
+    if( newMonth >= new Date().getMonth() + 1 ) {
+        newMonth = newMonth + 1;
+    }
+    createCalendar(2022, newMonth);
+    // return (newMonth);
+};
+
