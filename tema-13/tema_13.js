@@ -1,3 +1,5 @@
+let allCrewMemberData = [];
+
 // let unsortedArray = [2, 0, 15, 22, 9, 45, 10, 132, 99, 6];
 // for(let i=0; i< unsortedArray.length; i++) {
 //     for(;unsortedArray[i]>unsortedArray[i+1];){
@@ -69,11 +71,43 @@ let sortArray = function(){
 
 sortArray(unsortedArray);
 
+let sortInHTML = function() {
+
+    alert('at this point in time, we have ' + allCrewMemberData.length + ' crew members')
+
+    let imageDivElements = document.querySelectorAll('#crew > .imageDiv');
+
+    let moreSortingNeeded = true;
+    for (;moreSortingNeeded;) {
+        moreSortingNeeded = false;
+        for (let i = 0; i < imageDivElements.length - 1; i++) {
+
+            let currentCrewElem = imageDivElements[i];
+            let nextCrewElem = imageDivElements[i + 1];
+        
+            if (currentCrewElem.firstChild.innerHTML > nextCrewElem.firstChild.innerHTML) {
+                let copyImageUrl = currentCrewElem.style.backgroundImage;
+                let copyName = currentCrewElem.firstChild.innerHTML;
+
+                currentCrewElem.style.backgroundImage = nextCrewElem.style.backgroundImage;
+                currentCrewElem.firstChild.innerHTML = nextCrewElem.firstChild.innerHTML;
+
+                nextCrewElem.style.backgroundImage = copyImageUrl;
+                nextCrewElem.firstChild.innerHTML = copyName;
+
+                moreSortingNeeded = true;
+            }
+        }
+    }
+};
+
 // sort SpaceX crew image and name:
 axios
     .get('https://api.spacexdata.com/v4/crew')
     .then(function (response) {
         console.log(response);
+
+        allCrewMemberData = response.data;
 
         let myCreateFunction = function() {
             for (i=0; i<response.data.length; i++) {
@@ -137,7 +171,7 @@ axios
         //     sortButton.addEventListener('click', sortImages);
         //     // myCreateFunction();
         // }
-
+        document.querySelector('#sortButton').addEventListener('click', sortInHTML);
     })
     .catch(function (error) {
         // handle error
