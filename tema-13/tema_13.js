@@ -42,23 +42,23 @@
 //--------------------------------------------------------
 let unsortedArray = [2, 0, 15, 22, 9, 45, 10, 132, 99, 6];
 
-let counter = 0;
 
 let sortArray = function(){
     document.getElementById('unsortedArray').innerHTML ="Unsorted Array: " + unsortedArray;
-    for(;counter <= unsortedArray.length*unsortedArray.length;){
+    
+    let moreSortingNeeded = true;
+    for (;moreSortingNeeded;) {
+        moreSortingNeeded = false;
         for(let i=0; i< unsortedArray.length; i++) {
         
             if(unsortedArray[i]>unsortedArray[i+1]){
                 let copyElement = unsortedArray[i];
                 unsortedArray[i] = unsortedArray[i+1];
                 unsortedArray[i+1] = copyElement;
+
+                moreSortingNeeded = true;
                 
                 // console.log(unsortedArray);
-            }
-            if(unsortedArray[i]<unsortedArray[i+1]){
-                counter++;
-        
             }
         }
     }
