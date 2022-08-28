@@ -49,9 +49,9 @@ let sortArray = function(){
     let moreSortingNeeded = true;
     for (;moreSortingNeeded;) {
         moreSortingNeeded = false;
-        for(let i=0; i< unsortedArray.length; i++) {
+        for (let i = 0; i < unsortedArray.length - 1; i++) {
         
-            if(unsortedArray[i]>unsortedArray[i+1]){
+            if (unsortedArray[i] > unsortedArray[i + 1]) {
                 let copyElement = unsortedArray[i];
                 unsortedArray[i] = unsortedArray[i+1];
                 unsortedArray[i+1] = copyElement;
