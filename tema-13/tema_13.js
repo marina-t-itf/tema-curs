@@ -98,6 +98,8 @@ axios
                 newDivImage.appendChild(newDiv);
                 initialDiv.appendChild(newDivImage);
 
+                
+
                 // let crewMember = {
                 //     image: src = 'url(${response.data[i].image})',
                 //     name: response.data[i].name
@@ -105,8 +107,36 @@ axios
                 // console.log(crewMember);
             }
             // return (crewMember);
+           
         }
         myCreateFunction();
+
+        response.data.sort((a, b) => {
+            let fa = a.name.toLowerCase(),
+                fb = b.name.toLowerCase();
+        
+            if (fa < fb) {
+                return -1;
+            }
+            if (fa > fb) {
+                return 1;
+            }
+            return 0;
+        });
+        response.data.forEach((e) => {
+            console.log(`${e.name} ${e.image}`);
+            
+        });
+
+        
+        // let sortImages = function() {
+        //     let sortButton = document.getElementById("sortButton")
+        //     // sortButton.innerHTML = myCreateFunction.sort();
+        //     sortButton.innerHTML = newDiv.sort();
+         
+        //     sortButton.addEventListener('click', sortImages);
+        //     // myCreateFunction();
+        // }
 
     })
     .catch(function (error) {
