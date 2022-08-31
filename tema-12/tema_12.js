@@ -1,52 +1,99 @@
-axios
-    .get('https://api.spacexdata.com/v4/launches')
-    .then(function (response) {
-        // handle success
-        console.log(response);
+let launches = {
+    data: {
+        allItems: [],
+    },
 
-        let bringLaunchesData = function() {
-            for (i=0; i<response.data.length; i++) {
-                console.log(response.data[i].date_utc);
+    initialize: function() {
+        axios
+            .get('https://api.spacexdata.com/v4/launches')
+            .then(launches.onAxiosFinished)
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+        ;
 
-                let allLaunches = response.data[i].date_utc.split('T')[0];
-                console.log(allLaunches);
-                let yearAsNumber = parseInt(response.data[i].date_utc.split('-')[0]);
-                let monthAsNumber = parseInt(response.data[i].date_utc.split('-')[1]);
-                console.log(yearAsNumber);
-                console.log(monthAsNumber);
-                if(yearAsNumber === 2022 && monthAsNumber === 08) {
-                    console.log(response.data[i].date_utc.split('T')[0]);
-                }
+    },
 
+    bringLaunchesData: function() {
+        for (i=0; i<launches.data.allItems.length; i++) {
+            console.log(launches.data.allItems[i].date_utc);
+
+            let allLaunches = launches.data.allItems[i].date_utc.split('T')[0];
+            console.log(allLaunches);
+
+            let yearAsNumber = parseInt(launches.data.allItems[i].date_utc.split('-')[0]);
+            let monthAsNumber = parseInt(launches.data.allItems[i].date_utc.split('-')[1]);
+            console.log(yearAsNumber);
+            console.log(monthAsNumber);
+            
+            if(yearAsNumber === 2022 && monthAsNumber === 08) {
+                console.log(launches.data.allItems[i].date_utc.split('T')[0]);
             }
-        // return(yearAsNumber, monthAsNumber);
-           
         }
-        bringLaunchesData();
-    }
-    )
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-;
+    },
 
-// let getLaunchesForMonth = function(yearAsNumber, monthAsNumber, allLaunches) {
-//     let launchesForMonth = []; 
+    onAxiosFinished: function(response) {
+        launches.data.allItems = response.data;
+        launches.bringLaunchesData();
+
+    },
+    
+};
+
+launches.initialize();
+
+
+
+// axios
+//     .get('https://api.spacexdata.com/v4/launches')
+//     .then(function (response) {
+//         // handle success
+//         console.log(response);
+
+//         let bringLaunchesData = function() {
+//             for (i=0; i<response.data.length; i++) {
+//                 console.log(response.data[i].date_utc);
+
+//                 let allLaunches = response.data[i].date_utc.split('T')[0];
+//                 console.log(allLaunches);
+//                 let yearAsNumber = parseInt(response.data[i].date_utc.split('-')[0]);
+//                 let monthAsNumber = parseInt(response.data[i].date_utc.split('-')[1]);
+//                 console.log(yearAsNumber);
+//                 console.log(monthAsNumber);
+//                 if(yearAsNumber === 2022 && monthAsNumber === 08) {
+//                     console.log(response.data[i].date_utc.split('T')[0]);
+//                 }
+
+//             }
+//         // return(yearAsNumber, monthAsNumber);
+           
+//         }
+//         bringLaunchesData();
+//     }
+//     )
+//     .catch(function (error) {
+//         // handle error
+//         console.log(error);
+//     })
+// ;
+
+// // let getLaunchesForMonth = function(yearAsNumber, monthAsNumber, allLaunches) {
+// //     let launchesForMonth = []; 
     
 
-//     return launchesForMonth;
-// }
+// //     return launchesForMonth;
+// // }
 
-// let addBulletInTable = function(theNumber) {
-//     let img = document.createElement("img");
-//     img.src = "../images/ellipse.png";
-//     // let src = document.getElementById("myTabel");
-//     let src = theNumber.getAttribute("data-the-number-of-day");
-//     src.appendChild(img);
-// }
+// // let addBulletInTable = function(theNumber) {
+// //     let img = document.createElement("img");
+// //     img.src = "../images/ellipse.png";
+// //     // let src = document.getElementById("myTabel");
+// //     let src = theNumber.getAttribute("data-the-number-of-day");
+// //     src.appendChild(img);
+// // }
 
-// addBulletInTable();
+// // addBulletInTable();
 
 // function createCalendar(elem, year, month) {
 
@@ -122,11 +169,9 @@ let createCalendar = function(year, month) {
     // <td> with actual dates
     for(; d.getMonth() === mon ;){
         table += '<td>' + d.getDate() + '</td>';
-
         if (getDay(d) % 7 === 6) { // sunday, last day of week - newline
             table += '</tr><tr>';
         }
-
         d.setDate(d.getDate() + 1);
     }
 
@@ -143,8 +188,6 @@ let createCalendar = function(year, month) {
 
     let createdCalendar = document.querySelector('div#calendar');
     createdCalendar.innerHTML = table;
-    // elem.innerHTML = table;
-
 }
 
 let getDay = function(date) { // get day number from 0 (monday) to 6 (sunday)
@@ -173,23 +216,27 @@ createCalendar( 2022, newMonth);
 //     }
 // }
 
+let allMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
 let onPreviewButtonClick = function() {
-    let button = document.querySelector('previewButton');
-   
-    if( newMonth <= new Date().getMonth() + 1 ) {
-        newMonth = newMonth - 1;
-    }
-          
+    let prevButton = document.querySelector('previewButton');
+    let prevMonth = 0;
+    if( prevMonth <= newMonth && newMonth > 1 ) {
+        prevMonth = newMonth - 1;
+        newMonth = newMonth - 1
+    } 
     createCalendar(2022, newMonth);
-    // return (newMonth);
+    // prevButton.addEventListener('click', onPreviewButtonClick);
 };
 
+
 let onNextButtonClick = function() {
-    let button = document.querySelector('nextButton');
-    if( newMonth >= new Date().getMonth() + 1 ) {
+    let nextButton = document.querySelector('nextButton');
+    let nextMonth = 0;
+    if( nextMonth <= newMonth && newMonth < 12 ) {
+        nextMonth = newMonth + 1;
         newMonth = newMonth + 1;
     }
     createCalendar(2022, newMonth);
-    // return (newMonth);
+    // nextButton.addEventListener('click', onNextButtonClick);
 };
-
