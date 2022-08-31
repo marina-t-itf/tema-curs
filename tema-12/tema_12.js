@@ -26,10 +26,13 @@ let launches = {
             let monthAsNumber = parseInt(launches.data.allItems[i].date_utc.split('-')[1]);
             console.log(yearAsNumber);
             console.log(monthAsNumber);
-            
+            let dayAsNumber = parseInt(allLaunches.split('-')[2]);
+            console.log(dayAsNumber);
+
             if(yearAsNumber === 2022 && monthAsNumber === 08) {
                 console.log(launches.data.allItems[i].date_utc.split('T')[0]);
             }
+           
         }
     },
 
@@ -149,7 +152,7 @@ let createCalendar = function(year, month) {
     let d = new Date(year, mon);
 
     let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
-    
+   
     let monthName = document.querySelector('div.monthName');
     let monthNameArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     for( let i = 0; i < 12; i++) {
@@ -168,7 +171,7 @@ let createCalendar = function(year, month) {
 
     // <td> with actual dates
     for(; d.getMonth() === mon ;){
-        table += '<td>' + d.getDate() + '</td>';
+        table += '<td class = dayCell>' + d.getDate() + '</td>';
         if (getDay(d) % 7 === 6) { // sunday, last day of week - newline
             table += '</tr><tr>';
         }
@@ -240,3 +243,16 @@ let onNextButtonClick = function() {
     createCalendar(2022, newMonth);
     // nextButton.addEventListener('click', onNextButtonClick);
 };
+
+let createCircle = function(a) {
+    let circle = document.querySelector(".dayCell");
+    let addCircle = document.createElement('div');
+    circle.appendChild(addCircle);
+//     // for(let i = 1; i < d.getDate().length; i++) {
+//     //     if(d.getDate()[i] === a) {
+            addCircle.classList.add('circle');
+//     //     }
+//     // }
+}
+
+createCircle(5);
