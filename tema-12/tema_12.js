@@ -1,3 +1,7 @@
+let globalSelectedYear = 2022;
+let globalSelectedMonth = new Date().getMonth() + 1;
+
+
 let launches = {
     data: {
         allItems: [],
@@ -15,7 +19,8 @@ let launches = {
 
     },
 
-    bringLaunchesData: function() {
+    bringLaunchesData: function(selectedYear, selectedMonth) {
+        let monthLaunchesArray = [];
         for (i=0; i<launches.data.allItems.length; i++) {
             console.log(launches.data.allItems[i].date_utc);
 
@@ -29,10 +34,11 @@ let launches = {
             let dayAsNumber = parseInt(allLaunches.split('-')[2]);
             console.log(dayAsNumber);
 
-            if(yearAsNumber === 2022 && monthAsNumber === 08) {
+            if(yearAsNumber === selectedYear && monthAsNumber === selectedMonth) {
                 console.log(launches.data.allItems[i].date_utc.split('T')[0]);
+                // monthLaunchesArray.push(...)
             }
-           
+            return monthLaunchesArray;
         }
     },
 
@@ -199,8 +205,7 @@ let getDay = function(date) { // get day number from 0 (monday) to 6 (sunday)
         return day - 1;
 }
 
-let newMonth = new Date().getMonth() + 1;
-createCalendar( 2022, newMonth);
+createCalendar(globalSelectedYear, globalSelectedMonth);
 
 // let onButtonClick = function() {
 //     if (newMonth <= new Date().getMonth() + 1) {
@@ -225,10 +230,10 @@ let onPreviewButtonClick = function() {
     let prevButton = document.querySelector('previewButton');
     let prevMonth = 0;
     if( prevMonth <= newMonth && newMonth > 1 ) {
-        prevMonth = newMonth - 1;
-        newMonth = newMonth - 1
+        globalSelectedMonth = globalSelectedMonth - 1;
+        // globalSelectedYear = globalSelectedYear - 1;
     } 
-    createCalendar(2022, newMonth);
+    createCalendar(globalSelectedYear, globalSelectedMonth);
     // prevButton.addEventListener('click', onPreviewButtonClick);
 };
 
@@ -237,10 +242,9 @@ let onNextButtonClick = function() {
     let nextButton = document.querySelector('nextButton');
     let nextMonth = 0;
     if( nextMonth <= newMonth && newMonth < 12 ) {
-        nextMonth = newMonth + 1;
-        newMonth = newMonth + 1;
+        globalSelectedMonth = globalSelectedMonth + 1;
     }
-    createCalendar(2022, newMonth);
+    createCalendar(globalSelectedYear, globalSelectedMonth);
     // nextButton.addEventListener('click', onNextButtonClick);
 };
 
