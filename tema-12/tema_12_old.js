@@ -1,10 +1,8 @@
-let globalSelectedYear = 2022;
-let globalSelectedMonth = new Date().getMonth() + 1;
-
 
 let launches = {
     data: {
         allItems: [],
+
     },
 
     initialize: function() {
@@ -19,7 +17,8 @@ let launches = {
 
     },
 
-    bringLaunchesData: function(selectedYear, selectedMonth) {
+    bringLaunchesData: function() {
+
         let monthLaunchesArray = [];
         for (i=0; i<launches.data.allItems.length; i++) {
             console.log(launches.data.allItems[i].date_utc);
@@ -34,31 +33,27 @@ let launches = {
             let dayAsNumber = parseInt(allLaunches.split('-')[2]);
             console.log(dayAsNumber);
 
-            if(yearAsNumber === selectedYear && monthAsNumber === selectedMonth) {
+
+            if(yearAsNumber === 2022 && monthAsNumber === 08) {
+
                 console.log(launches.data.allItems[i].date_utc.split('T')[0]);
-                monthLaunchesArray.push(dayAsNumber);
+                // monthLaunchesArray.push(...)
             }
-            return monthLaunchesArray;
+
         }
     },
-
     onAxiosFinished: function(response) {
         launches.data.allItems = response.data;
         launches.bringLaunchesData();
-
     },
     
 };
 
 launches.initialize();
 
-//-------------------------------------------------------
-
 let createCalendar = function(year, month) {
-
     let mon = month - 1; // months in JS are 0..11, not 1..12
     let d = new Date(year, mon);
-
     let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
    
     let monthName = document.querySelector('div.monthName');
@@ -76,7 +71,6 @@ let createCalendar = function(year, month) {
     for (let i = 0; i < getDay(d); i++) {
         table += '<td></td>';
     }
-
     // <td> with actual dates
     for(; d.getMonth() === mon ;){
         table += '<td class = dayCell>' + d.getDate() + '</td>';
@@ -85,7 +79,6 @@ let createCalendar = function(year, month) {
         }
         d.setDate(d.getDate() + 1);
     }
-
     // add spaces after last days of month for the last row
     // 29 30 31 * * * *
     if (getDay(d) !== 0) {
@@ -93,62 +86,46 @@ let createCalendar = function(year, month) {
             table += '<td></td>';
         }
     }
-
     // close the table
     table += '</tr></table>';
-
     let createdCalendar = document.querySelector('div#calendar');
     createdCalendar.innerHTML = table;
 }
-
 let getDay = function(date) { // get day number from 0 (monday) to 6 (sunday)
     let day = date.getDay();
     if (day === 0) day = 7; // make Sunday (0) the last day
         return day - 1;
 }
 
-createCalendar(globalSelectedYear, globalSelectedMonth);
+
+let newMonth = new Date().getMonth() + 1;
+createCalendar(2022, newMonth);
 
 
+// let onButtonClick = function() {
+//     if (newMonth <= new Date().getMonth() + 1) {
 let onPreviewButtonClick = function() {
     let prevButton = document.querySelector('previewButton');
     let prevMonth = 0;
-    if( prevMonth <= globalSelectedMonth ) {
-        globalSelectedMonth = globalSelectedMonth - 1;
+    if( prevMonth <= newMonth && newMonth > 1 ) {
+        prevMonth = newMonth - 1;
+        newMonth = newMonth - 1
     } 
-    if(globalSelectedMonth === 0) {
-        globalSelectedYear = globalSelectedYear - 1;
-        globalSelectedMonth = 12;
-    }
-    
-    createCalendar(globalSelectedYear, globalSelectedMonth);
+    createCalendar(2022, newMonth);
+
     // prevButton.addEventListener('click', onPreviewButtonClick);
 };
 
-
 let onNextButtonClick = function() {
     let nextButton = document.querySelector('nextButton');
-    
-        if(globalSelectedMonth < 12 ) {
-            globalSelectedMonth = globalSelectedMonth + 1;
-        }
+    let nextMonth = 0;
+    if( nextMonth <= newMonth && newMonth < 12 ) {
+        nextMonth = newMonth + 1;
+        newMonth = newMonth + 1;
 
-    if(globalSelectedYear < new Date().getFullYear() && globalSelectedMonth === 12) {
-        if( globalSelectedMonth === 12) {
-            
-            globalSelectedYear = globalSelectedYear + 1;
-            globalSelectedMonth = 0;
-
-            if( globalSelectedMonth <= 11) {
-                globalSelectedMonth = globalSelectedMonth + 1;
-             
-                
-            } 
-        }
     }
-    
-   
-    createCalendar(globalSelectedYear, globalSelectedMonth);
+    createCalendar(2022, newMonth);
+
     // nextButton.addEventListener('click', onNextButtonClick);
 };
 
